@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './App.css';
+import Filter from './components/Filter';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 function App() {
     const [todos, setTodos] = useState([]);
+    const [filter, setFilter] = useState('all');
 
     const addTodo = (todo) => {
         setTodos([...todos, todo]);
@@ -19,15 +21,23 @@ function App() {
     };
 
     const deleteTodo = (id) => {
-        setTodos(todos.filter((todo) => todo.id !== id));
+        setTodos(todos.filter( todo => todo.id !== id ));
     };
+
+    const filteredTodos = todos.filter( todo => {
+        if (filter === 'active') return !todo.completed;
+        if (filter === 'completed') return todo.completed;
+        return true;
+    });
 
     return (
         <div className="app-container">
             <h1>Taskido</h1>
             <TodoForm addTodo={addTodo} />
+            <Filter filter={filter} setFilter={setFilter} />
             <TodoList 
-                todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}
+                todos={filteredTodos} 
+                toggleTodo={toggleTodo} deleteTodo={deleteTodo}
             />
         </div>
     );
