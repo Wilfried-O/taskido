@@ -32,7 +32,7 @@ function App() {
 
     return (
         <div className="app-container">
-            <h1>Taskido</h1>
+            <h1 className="app-title">Taskido</h1>
             <TodoForm addTodo={addTodo} />
             <Filter filter={filter} setFilter={setFilter} />
             <TodoList 

@@ -1,15 +1,20 @@
+import styles from './TodoItem.module.css';
+
 function TodoItem({ todo, toggleTodo, deleteTodo }) {
     return (
-        <li>
+        <li className={styles.todoItem}>
             <input
               type="checkbox"
+              className={styles.checkbox}
               checked={todo.completed}
               onChange={ () => toggleTodo(todo.id) }
             />
-            <span style={ {textDecoration: todo.completed ? 'line-through' : 'none'} }>
+            <span className={ `${styles.text} ${todo.completed ? styles.completed : ''}` }>
               {todo.text}
             </span>
-            <button onClick={ () => deleteTodo(todo.id) }>Delete</button>
+            <button 
+              className={styles.deleteButton} 
+              onClick={ () => deleteTodo(todo.id) }>Delete</button>
         </li>
         
     );
