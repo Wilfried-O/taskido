@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './App.css';
 import Filter from './components/Filter';
 import TodoForm from './components/TodoForm';
@@ -12,6 +12,10 @@ function App() {
         setTodos([...todos, todo]);
     };
     
+    const deleteTodo = (id) => {
+        setTodos(todos.filter( todo => todo.id !== id ));
+    };
+
     const toggleTodo = (id) => {
         setTodos(
             todos.map( todo =>
@@ -20,15 +24,30 @@ function App() {
         );
     };
 
-    const deleteTodo = (id) => {
-        setTodos(todos.filter( todo => todo.id !== id ));
+    const reorderTodos = (sourceID, targetID) => {
+        if (sourceID === targetID) return todos;
+
+        // Find indices
+        const sourceIndex = todos.findIndex(todo => todo.id === sourceID);
+        const targetIndex = todos.findIndex(todo => todo.id === targetID);
+
+        // Create new (for immutability!) array with swapped items 
+        const newTodos = [...todos];
+        const [movedItem] = newTodos.splice(sourceIndex, 1);
+        newTodos.splice(targetIndex, 0, movedItem);
+
+        setTodos(newTodos);
     };
 
-    const filteredTodos = todos.filter( todo => {
-        if (filter === 'active') return !todo.completed;
-        if (filter === 'completed') return todo.completed;
-        return true;
-    });
+    // `useMemo` Hook to avoid recomputing it unnecessarily
+    const filteredTodos = useMemo( () => 
+        todos.filter(todo => {
+            if (filter === 'active') return !todo.completed;
+            if (filter === 'completed') return todo.completed;
+            return true;
+        }), 
+        [todos, filter] // Dependencies: recompute only if these change
+    );
 
     return (
         <div className="app-container">
@@ -36,7 +55,8 @@ function App() {
             <TodoForm addTodo={addTodo} />
             <Filter filter={filter} setFilter={setFilter} />
             <TodoList 
-                todos={filteredTodos} 
+                todos={filteredTodos}
+                reorderTodos={reorderTodos}
                 toggleTodo={toggleTodo} deleteTodo={deleteTodo}
             />
         </div>
