@@ -1,19 +1,13 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import './App.css';
 import Filter from './components/Filter';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
-    const [todos, setTodos] = useState(() => {
-        const savedTodos = localStorage.getItem('todos');
-        return savedTodos ? JSON.parse(savedTodos) : [];
-    });
+    const [todos, setTodos] = useLocalStorage('todos', []);
     const [filter, setFilter] = useState('all');
-
-    useEffect(() => {
-        localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos]);
 
     const addTodo = (todo) => {
         setTodos([...todos, todo]);
