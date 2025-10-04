@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 
 import useLocalStorage from "./hooks/useLocalStorage";
 import useHistory from "./lib/useHistory";
+import UndoRedo from "./components/UndoRedo";
 
 const MAX_HISTORY = 50;
 
@@ -79,17 +80,15 @@ function App() {
       <h1 className="app-title">Taskido</h1>
 
       <TodoForm addTodo={addTodo} />
+
       <Filter filter={filter} setFilter={setFilter} />
 
-      <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
-        <button type="button" onClick={undo} disabled={!canUndo}>
-          Undo
-        </button>
-        <button type="button" onClick={redo} disabled={!canRedo}>
-          Redo
-        </button>
-      </div>
-
+      <UndoRedo
+        onUndo={undo}
+        onRedo={redo}
+        canUndo={canUndo}
+        canRedo={canRedo}
+      />
       <TodoList
         todos={filteredTodos}
         reorderTodos={reorderTodos}
