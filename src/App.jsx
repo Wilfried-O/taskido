@@ -7,6 +7,8 @@ import TodoList from "./components/TodoList";
 import useLocalStorage from "./hooks/useLocalStorage";
 import useHistory from "./lib/useHistory";
 import UndoRedo from "./components/UndoRedo";
+import { ThemeProvider } from "./context/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
 
 const MAX_HISTORY = 50;
 
@@ -76,26 +78,38 @@ function App() {
   }, [todos, filter]);
 
   return (
-    <div className="app-container">
-      <h1 className="app-title">Taskido</h1>
+    <ThemeProvider>
+      <div className="app-container">
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "1rem",
+          }}
+        >
+          <h1 className="app-title">Taskido</h1>
+          <ThemeToggle />
+        </div>
 
-      <TodoForm addTodo={addTodo} />
+        <TodoForm addTodo={addTodo} />
 
-      <Filter filter={filter} setFilter={setFilter} />
+        <Filter filter={filter} setFilter={setFilter} />
 
-      <UndoRedo
-        onUndo={undo}
-        onRedo={redo}
-        canUndo={canUndo}
-        canRedo={canRedo}
-      />
-      <TodoList
-        todos={filteredTodos}
-        reorderTodos={reorderTodos}
-        toggleTodo={toggleTodo}
-        deleteTodo={deleteTodo}
-      />
-    </div>
+        <UndoRedo
+          onUndo={undo}
+          onRedo={redo}
+          canUndo={canUndo}
+          canRedo={canRedo}
+        />
+        <TodoList
+          todos={filteredTodos}
+          reorderTodos={reorderTodos}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
+      </div>
+    </ThemeProvider>
   );
 }
 
