@@ -8,7 +8,7 @@ A simple todo-list app built with React to manage tasks efficiently.
 - **[x] Drag-and-Drop Reordering**: Reorder tasks using drag-and-drop.
 - **[x] Local Storage Persistence**: Save tasks across browser sessions.
 - **[x] Undo/Redo**: Revert or redo changes using the `use-immer` library.
-- **[ ] Dark Mode**: Toggle between light and dark themes.
+- **[x] Dark Mode**: Toggle between light and dark themes.
 
 ## Getting Started
 
@@ -20,11 +20,9 @@ A simple todo-list app built with React to manage tasks efficiently.
 
 ## Project Status
 
-- Completed: Task input, list rendering, filtering,
-  drag-and-drop reordering, local storage persistence, and
-  undo/redo functionalities.
-- Work in progress: dark mode implementation.
-- After app is feature-complete, we will: add icons for better UX, and app logo
+- Completed: All features have been implemented.
+- Work in progress: add icons and app logo, refactoring for clarity and accessibility (aria),
+  make the app responsive (mobile-friendly)
 
 ## AI usage
 
