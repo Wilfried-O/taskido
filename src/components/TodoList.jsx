@@ -12,7 +12,7 @@ function TodoList({ todos, reorderTodos, toggleTodo, deleteTodo }) {
         e.currentTarget.style.opacity = '0.5';
     };
 
-    const handleDragOver = (e) => {
+    const handleDragOver = e => {
         e.preventDefault(); //  Prevents default to allow drop
         e.dataTransfer.dropEffect = 'move';
     };
@@ -22,7 +22,7 @@ function TodoList({ todos, reorderTodos, toggleTodo, deleteTodo }) {
         e.currentTarget.style.backgroundColor = 'lightblue';
     };
 
-    const handleDragLeave = (e) => {
+    const handleDragLeave = e => {
         e.currentTarget.style.backgroundColor = '';
     };
 
@@ -32,22 +32,21 @@ function TodoList({ todos, reorderTodos, toggleTodo, deleteTodo }) {
         if (draggedItem === dropItemId) return; // Don't drop on itself
 
         reorderTodos(draggedItem, dropItemId);
-        
+
         setDraggedItem(null); // Clear dragged state
         e.currentTarget.style.backgroundColor = '';
     };
 
-
     // Handle drag end to clean up
-    const handleDragEnd = (e) => {
+    const handleDragEnd = e => {
         setDraggedItem(null);
         e.currentTarget.style.opacity = '1';
         e.dataTransfer.dropEffect = 'none';
     };
 
-    return(
-        <ul className="todoList" >
-            {todos.map( (todo) => (
+    return (
+        <ul className="todoList">
+            {todos.map(todo => (
                 <TodoItem
                     key={todo.id}
                     todo={todo}

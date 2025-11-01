@@ -1,31 +1,33 @@
 .group {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .button {
-  padding: 0.25rem 0.25rem;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background-color: var(--surface-color);
-  color: var(--text-color);
-  cursor: pointer;
-  font-size: 0.65rem;
-  transition: background-color 0.1s ease, border-color 0.1s ease,
-    color 0.1s ease;
+    padding: 0.25rem 0.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.65rem;
+    transition:
+        background-color 0.1s ease,
+        border-color 0.1s ease,
+        color 0.1s ease;
 }
 
 .button:hover {
-  background-color: var(--hover-bg);
-  border-color: var(--border-strong-color);
+    background-color: var(--hover-bg);
+    border-color: var(--border-strong-color);
 }
 
 .button:disabled,
-.button[aria-disabled="true"] {
-  cursor: not-allowed;
-  opacity: 0.55;
-  background-color: var(--subtle-color);
-  color: var(--muted-color);
-  border-color: var(--border-color);
+.button[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.55;
+    background-color: var(--subtle-color);
+    color: var(--muted-color);
+    border-color: var(--border-color);
 }

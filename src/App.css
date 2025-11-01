@@ -1,142 +1,142 @@
 :root {
-  /* Base/text/borders */
-  --light-bg: #ffffff; /* body bg */
-  --light-surface: #ffffff; /* cards/items */
-  --light-subtle: #f9f9f9; /* Filter bar bg  */
-  --light-text: #333333; /* main text  */
-  --light-muted: #666666;
-  --light-border: #dddddd; /* borders */
-  --light-border-strong: #999999; /* hover border  */
-  --light-hover: #e9e9e9; /* button hover */
+    /* Base/text/borders */
+    --light-bg: #ffffff; /* body bg */
+    --light-surface: #ffffff; /* cards/items */
+    --light-subtle: #f9f9f9; /* Filter bar bg  */
+    --light-text: #333333; /* main text  */
+    --light-muted: #666666;
+    --light-border: #dddddd; /* borders */
+    --light-border-strong: #999999; /* hover border  */
+    --light-hover: #e9e9e9; /* button hover */
 
-  --light-input-bg: #ffffff;
-  --light-placeholder: #888888;
+    --light-input-bg: #ffffff;
+    --light-placeholder: #888888;
 
-  /* Status / accent colors */
-  --light-primary: #007bff; /* active filter */
-  --light-primary-hover: #0069d9; /* typical hover for #007bff */
-  --light-success: #28a745; /* the Add button  */
-  --light-success-hover: #218838; /* hover */
-  --light-danger: #dc3545; /* Delete */
-  --light-danger-hover: #c82333; /* hover  */
-  --light-on-primary: #ffffff;
+    /* Status / accent colors */
+    --light-primary: #007bff; /* active filter */
+    --light-primary-hover: #0069d9; /* typical hover for #007bff */
+    --light-success: #28a745; /* the Add button  */
+    --light-success-hover: #218838; /* hover */
+    --light-danger: #dc3545; /* Delete */
+    --light-danger-hover: #c82333; /* hover  */
+    --light-on-primary: #ffffff;
 
-  /* Drag-and-drop cues */
-  --light-dnd-hover: #e7f1ff; /* visual cue for hover target */
-  --light-dnd-border: #99c2ff;
+    /* Drag-and-drop cues */
+    --light-dnd-hover: #e7f1ff; /* visual cue for hover target */
+    --light-dnd-border: #99c2ff;
 
-  /* ----------------------- DARK MODE ----------------------- */
+    /* ----------------------- DARK MODE ----------------------- */
 
-  --dark-bg: #0f1115; /* page background */
-  --dark-surface: #1a1f29; /* cards/items */
-  --dark-subtle: #141821; /* Filter bar bg */
-  --dark-text: #e6e8eb; /* main text */
-  --dark-muted: #a1a8b3;
-  --dark-border: #2a2f3a; /* subtle separators */
-  --dark-border-strong: #3a3f4b; /* hover/active borders */
-  --dark-hover: #1f2530; /* hover surface */
+    --dark-bg: #0f1115; /* page background */
+    --dark-surface: #1a1f29; /* cards/items */
+    --dark-subtle: #141821; /* Filter bar bg */
+    --dark-text: #e6e8eb; /* main text */
+    --dark-muted: #a1a8b3;
+    --dark-border: #2a2f3a; /* subtle separators */
+    --dark-border-strong: #3a3f4b; /* hover/active borders */
+    --dark-hover: #1f2530; /* hover surface */
 
-  --dark-input-bg: #11161c;
-  --dark-placeholder: #8892a6;
+    --dark-input-bg: #11161c;
+    --dark-placeholder: #8892a6;
 
-  /* Dark status / accents (accessible on dark) */
-  --dark-primary: #4ea1ff; /* brightened bootstrap blue for dark */
-  --dark-primary-hover: #3b8cff;
-  --dark-success: #34d399; /* emerald 400-ish */
-  --dark-success-hover: #2fb07f;
-  --dark-danger: #ff5c6b; /* vivid but readable red */
-  --dark-danger-hover: #ff4254;
-  --dark-on-primary: #ffffff;
+    /* Dark status / accents (accessible on dark) */
+    --dark-primary: #4ea1ff; /* brightened bootstrap blue for dark */
+    --dark-primary-hover: #3b8cff;
+    --dark-success: #34d399; /* emerald 400-ish */
+    --dark-success-hover: #2fb07f;
+    --dark-danger: #ff5c6b; /* vivid but readable red */
+    --dark-danger-hover: #ff4254;
+    --dark-on-primary: #ffffff;
 
-  --dark-dnd-hover: #0f2a3f;
-  --dark-dnd-border: #2b6cb0;
+    --dark-dnd-hover: #0f2a3f;
+    --dark-dnd-border: #2b6cb0;
 }
 
 body {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 body.theme-light {
-  --bg-color: var(--light-bg);
-  --surface-color: var(--light-surface);
-  --subtle-color: var(--light-subtle);
+    --bg-color: var(--light-bg);
+    --surface-color: var(--light-surface);
+    --subtle-color: var(--light-subtle);
 
-  --text-color: var(--light-text);
-  --muted-color: var(--light-muted);
+    --text-color: var(--light-text);
+    --muted-color: var(--light-muted);
 
-  --border-color: var(--light-border);
-  --border-strong-color: var(--light-border-strong);
-  --hover-bg: var(--light-hover);
+    --border-color: var(--light-border);
+    --border-strong-color: var(--light-border-strong);
+    --hover-bg: var(--light-hover);
 
-  --input-bg-color: var(--light-input-bg);
-  --placeholder-color: var(--light-placeholder);
+    --input-bg-color: var(--light-input-bg);
+    --placeholder-color: var(--light-placeholder);
 
-  --primary-color: var(--light-primary);
-  --primary-hover: var(--light-primary-hover);
-  --on-primary-color: var(--light-on-primary);
+    --primary-color: var(--light-primary);
+    --primary-hover: var(--light-primary-hover);
+    --on-primary-color: var(--light-on-primary);
 
-  --success-color: var(--light-success);
-  --success-hover: var(--light-success-hover);
+    --success-color: var(--light-success);
+    --success-hover: var(--light-success-hover);
 
-  --danger-color: var(--light-danger);
-  --danger-hover: var(--light-danger-hover);
+    --danger-color: var(--light-danger);
+    --danger-hover: var(--light-danger-hover);
 
-  --item-bg-color: var(--light-surface);
-  --dnd-hover-bg: var(--light-dnd-hover);
-  --dnd-hover-border: var(--light-dnd-border);
+    --item-bg-color: var(--light-surface);
+    --dnd-hover-bg: var(--light-dnd-hover);
+    --dnd-hover-border: var(--light-dnd-border);
 
-  background-color: var(--bg-color);
-  color: var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 body.theme-dark {
-  --bg-color: var(--dark-bg);
-  --surface-color: var(--dark-surface);
-  --subtle-color: var(--dark-subtle);
+    --bg-color: var(--dark-bg);
+    --surface-color: var(--dark-surface);
+    --subtle-color: var(--dark-subtle);
 
-  --text-color: var(--dark-text);
-  --muted-color: var(--dark-muted);
+    --text-color: var(--dark-text);
+    --muted-color: var(--dark-muted);
 
-  --border-color: var(--dark-border);
-  --border-strong-color: var(--dark-border-strong);
-  --hover-bg: var(--dark-hover);
+    --border-color: var(--dark-border);
+    --border-strong-color: var(--dark-border-strong);
+    --hover-bg: var(--dark-hover);
 
-  --input-bg-color: var(--dark-input-bg);
-  --placeholder-color: var(--dark-placeholder);
+    --input-bg-color: var(--dark-input-bg);
+    --placeholder-color: var(--dark-placeholder);
 
-  --primary-color: var(--dark-primary);
-  --primary-hover: var(--dark-primary-hover);
-  --on-primary-color: var(--dark-on-primary);
+    --primary-color: var(--dark-primary);
+    --primary-hover: var(--dark-primary-hover);
+    --on-primary-color: var(--dark-on-primary);
 
-  --success-color: var(--dark-success);
-  --success-hover: var(--dark-success-hover);
+    --success-color: var(--dark-success);
+    --success-hover: var(--dark-success-hover);
 
-  --danger-color: var(--dark-danger);
-  --danger-hover: var(--dark-danger-hover);
+    --danger-color: var(--dark-danger);
+    --danger-hover: var(--dark-danger-hover);
 
-  --item-bg-color: var(--dark-surface);
-  --dnd-hover-bg: var(--dark-dnd-hover);
-  --dnd-hover-border: var(--dark-dnd-border);
+    --item-bg-color: var(--dark-surface);
+    --dnd-hover-bg: var(--dark-dnd-hover);
+    --dnd-hover-border: var(--dark-dnd-border);
 
-  background-color: var(--bg-color);
-  color: var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .app-container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
 
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .app-title {
-  text-align: center;
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-  transition: color 0.3s ease;
+    text-align: center;
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
 }
